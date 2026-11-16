@@ -21,8 +21,15 @@ def main():
 
         elif choice == "2":
 
-            customer = input("Customer name: ")
-            item = input("Item name: ")
+            customer = input("Customer name: ").strip()
+            if customer == "":
+                print("Customer name cannot be empty!")
+                continue
+
+            item = input("Item name: ").strip().lower()
+            if item == "":
+                print("Item name cannot be empty!")
+                continue
             try:
                 quantity = int(input("Quantity: "))
             except ValueError:
