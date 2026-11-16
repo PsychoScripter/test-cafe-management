@@ -23,7 +23,7 @@ def main():
 
             customer = input("Customer name: ")
             item = input("Item name: ")
-            quantity = input("Quantity: ")
+            quantity = int(input("Quantity: "))
 
             create_order(customer, item, quantity)
 
