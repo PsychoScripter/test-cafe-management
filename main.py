@@ -20,8 +20,10 @@ def main():
             show_menu()
 
         elif choice == "2":
-
-            customer = input("Customer name: ")
+            try:
+                customer = input("Customer name: ")
+            except:
+                print("customer name should not be empty")
             item = input("Item name: ")
             try:
                 quantity = int(input("Quantity: "))
