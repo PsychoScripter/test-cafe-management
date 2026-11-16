@@ -1,7 +1,7 @@
 from menu import show_menu
 from order import create_order, orders
 from report import show_orders, show_report
-
+import menu
 
 def main():
 
@@ -23,6 +23,9 @@ def main():
             try:
                 customer = input("Customer name: ")
                 item = input("Item name: ")
+                if item not in menu.MENU:
+                    print('your item not exist')
+                    continue
                 quantity = int(input("Quantity: "))
             except ValueError:
                 print('please enter correct value')
