@@ -12,6 +12,13 @@ def create_order(customer_name, item, quantity):
         print("Item not found!")
         return
     
+    if customer_name.strip() == "":
+        print("Customer name cannot be empty")
+        return
+    
+    if quantity <= 0:
+        print("Quantity should be more than zero")
+        return
     
     total = price * quantity
 
