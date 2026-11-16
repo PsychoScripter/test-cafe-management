@@ -23,8 +23,11 @@ def main():
 
             customer = input("Customer name: ")
             item = input("Item name: ")
-            quantity = int(input("Quantity: "))
-
+            try:
+                quantity = int(input("Quantity: "))
+            except ValueError:
+                print("Quantity must be a number")
+                
             create_order(customer, item, quantity)
 
         elif choice == "3":
