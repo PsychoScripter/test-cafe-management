@@ -1,5 +1,5 @@
 from menu import show_menu
-from order import create_order, orders
+from order import create_order, orders ,cancel_order
 from report import show_orders, show_report
 import menu
 
@@ -12,7 +12,8 @@ def main():
         print("2. Create Order")
         print("3. Show Orders")
         print("4. Sales Report")
-        print("5. Exit")
+        print('5. cancel order')
+        print("6. Exit")
 
         choice = input("Enter your choice: ")
 
@@ -39,7 +40,11 @@ def main():
             show_report()
 
         elif choice == "5":
-            print("Goodbye!")
+            cancel=int(input('which order?'))
+            cancel_order(cancel)
+            
+        elif choice == "6":
+            print('goodbye')
             break
 
         else:
