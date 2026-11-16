@@ -20,10 +20,12 @@ def main():
             show_menu()
 
         elif choice == "2":
-
-            customer = input("Customer name: ")
-            item = input("Item name: ")
-            quantity = int(input("Quantity: "))
+            try:
+                customer = input("Customer name: ")
+                item = input("Item name: ")
+                quantity = int(input("Quantity: "))
+            except ValueError:
+                print('please enter correct value')
 
             create_order(customer, item, quantity)
 
