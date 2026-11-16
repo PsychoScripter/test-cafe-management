@@ -20,16 +20,15 @@ def main():
             show_menu()
 
         elif choice == "2":
-            try:
-                customer = input("Customer name: ")
-            except:
-                print("customer name should not be empty")
+
+            customer = input("Customer name: ")
             item = input("Item name: ")
             try:
                 quantity = int(input("Quantity: "))
             except ValueError:
                 print("Quantity must be a number")
-                
+                continue
+
             create_order(customer, item, quantity)
 
         elif choice == "3":
