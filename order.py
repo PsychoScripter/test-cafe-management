@@ -33,7 +33,7 @@ def get_orders():
 
 def cancel_order(index):
 
-    if index < 0 or index > len(orders):
+    if index < 0 or index >= len(orders):
         print("Invalid order number!")
         return
 
