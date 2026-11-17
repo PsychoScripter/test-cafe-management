@@ -11,9 +11,24 @@ def create_order(customer_name, item, quantity):
     if price is None:
         print("Item not found!")
         return
-
-    total = price * quantity
-
+    
+    try:
+        quantity = int(quantity)
+        
+        if quantity <= 0:
+                print("quantity not valid!")
+                return
+            
+        total = price * quantity
+        
+    except ValueError :
+        print ("error TypeError")
+        return
+        
+    except TypeError:
+        print("Quantity must be a number!")
+        return
+        
     order = {
         "customer": customer_name,
         "item": item,
